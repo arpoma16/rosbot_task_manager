@@ -9,11 +9,18 @@ This project uses a  [Rosbot 2R](https://husarion.com/tutorials/howtostart/rosbo
 This project is based on [rosbot_patrol](https://github.com/adamkrawczyk/rosbot_patrol) ,[robot patrol simulation](https://github.com/adamkrawczyk/rosbot_patrol_simulation) that have this [tuturial in husarion web page](https://husarion.com/tutorials/ros-projects/security-guard-robot/)
 
 
+other repositories that are important to check is:
+[Robot description ](https://github.com/husarion/rosbot_ros)
+[rosbot tutorial pkg](https://github.com/husarion/tutorial_pkg) that is the repo of this [webpage](https://husarion.com/tutorials/ros-tutorials/1-ros-introduction/)
+
+
 ##  Considerations!! this is really important
 *  no upgrade the RosBot 2R when you upgrade  the astra driver and wifi driver fail.
 *  dont try to use the sound pub of raspberry pi 4 that it have, this have some confilcts with the camera after you dont have video when up the astra container.
 
 * if you want get commands for audio  i dont test but you can use a usb sound adapter  or other device that send it for ros.
+
+* if you go to simulate the package remenber have [rosbot description in your workspace](https://github.com/husarion/rosbot_ros) o or add like source in  .bashrc
 
 ## how run 
 
