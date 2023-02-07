@@ -24,6 +24,17 @@ other repositories that are important to check is:
 
 ## how run 
 
+### generate map
+
+### explre the world 
+
+###  planing the map
+
+
+### run mission  recognizer 
+
+### run task command
+
 ### Docker services for rosbot 2R
 Encender los servicios( esto se tiene que hacer usando vnc)
 

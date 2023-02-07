@@ -1,0 +1,34 @@
+#name of commands
+
+command_num: 5   #remember that is enumerated from 0 you have to set it manually 
+command:
+  command0:
+    name: "bailar" #if it's set to 0,0,0 robot will go back to start point 
+    x:    0
+    y:    0
+    angle: 0
+
+  command1:
+    name: "vuelta"
+    x:    0
+    y:    0
+    angle: 0
+
+  command2:
+    name: "la patita"
+    x:    0
+    y:    0
+    angle: 0   
+
+  command3:
+    name: "traer chocolate"
+    x:    -3.489
+    y:    0.306
+    angle: 45
+    
+  command4:
+    name: "llevar pintura"
+    x:    -4.786
+    y:    3.412
+    angle: 236
+
