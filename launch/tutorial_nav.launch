@@ -1,7 +1,7 @@
 <launch>
-
-    <!--arg name="rosbot_pro" default="true" />
-    <arg name="use_gazebo" default="false" /-->
+    <arg name="use_gazebo" default="false" />
+    <arg name="rosbot_pro" default="false" />
+    
 
     <!-- Gazebo -->
     <!--group if="$(arg use_gazebo)">
@@ -20,11 +20,14 @@
         <include unless="$(arg rosbot_pro)" file="$(find rplidar_ros)/launch/rplidar.launch" />
     </group>
 
+    <node pkg="rviz" type="rviz" name="rviz"/-->
+
     <node unless="$(arg use_gazebo)" pkg="tf" type="static_transform_publisher" name="laser_broadcaster" args="0 0 0 3.14 0 0 base_link laser 100" />
+
 
     <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
 
-    <node pkg="rviz" type="rviz" name="rviz"/-->
+    
 
     <node pkg="gmapping" type="slam_gmapping" name="gmapping">
         <param name="base_frame" value="base_link"/>

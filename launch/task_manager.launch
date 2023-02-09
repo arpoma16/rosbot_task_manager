@@ -1,0 +1,10 @@
+<launch>
+    <arg name="map_file" default="$(find rosbot_task_manager)/maps/room_map.yaml"/>       <!-- path of map file -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" respawn="true" />
+    
+
+    <node pkg="rosbot_task_manager" type="task_manager.py" name="task_manager" output="screen">
+        <param name="yalm_path" type="string" value="$(find rosbot_task_manager)/params/command_params.yaml" />
+    </node>
+
+</launch>

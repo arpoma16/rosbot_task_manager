@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 import threading
 import rospy
 from std_msgs.msg import String
@@ -7,11 +7,6 @@ import run_command
 from rosbot_task_manager.srv import Command_service,Command_serviceResponse
 
 import get_yalm
-
-
-
-import time
-import logging
 
 Status_robot = 0 #[0: libre], [1:ocupado]
 Current_command = 0 

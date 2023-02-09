@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rospy
 import speech_recognition as sr
 from speech_recognition.srv import Command_service
