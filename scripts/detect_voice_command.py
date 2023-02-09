@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import rospy
-import rosbot_task_manager as sr
+import speech_recognition as sr
 from rosbot_task_manager.srv import Command_service
 
 import get_yalm 
+
 
 
 
