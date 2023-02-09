@@ -9,8 +9,13 @@ project(rosbot_task_manager)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   message_generation
+  geometry_msgs
+  gmapping
+  move_base
   rospy
+  roscpp
   std_msgs
+  tf
 )
 
 #find_package(catkin REQUIRED COMPONENTS
@@ -72,8 +77,7 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
-   DEPENDENCIES
+ generate_messages( DEPENDENCIES
    std_msgs  # Or other packages containing msgs
  )
 
@@ -107,6 +111,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS
+  message_runtime
 #  INCLUDE_DIRS include
 #  LIBRARIES tutorial_pkg
 #  CATKIN_DEPENDS roscpp
@@ -168,13 +174,14 @@ include_directories(
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
-## Mark executable scripts (Python etc.) for installation
+## Mark executable scripts (Python etc.) fblankor installation
 ## in contrast to setup.py, you can choose the destination
  catkin_install_python(PROGRAMS
-  scripts/detect_qr_command.py
-  scripts/detect_voice_command.py
-  scripts/run_command.py
-  scripts/command.py
+  #scripts/detect_qr_command.py
+  #scripts/detect_voice_command.py
+  #scripts/run_command.py
+  #scripts/task_manager.py
+  #scripts/get_yalm.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

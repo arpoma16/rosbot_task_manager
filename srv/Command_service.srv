@@ -1,5 +1,5 @@
 #request constants
-String a #commando []
+string a #commando []
 ---
 int8 c 
 #Repuesta - [0:ocupado][1:Ejecuta comando]

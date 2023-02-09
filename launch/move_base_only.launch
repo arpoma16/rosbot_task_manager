@@ -1,0 +1,13 @@
+<launch>
+
+    <node pkg="move_base" type="move_base" name="move_base" output="log">
+      <param name="controller_frequency" value="25.0"/>
+        <rosparam file="$(find rosbot_task_manager)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find rosbot_task_manager)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find rosbot_task_manager)/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find rosbot_task_manager)/config/trajectory_planner.yaml" command="load" />
+
+        <rosparam file="$(find rosbot_task_manager)/config/global_costmap_params.yaml" command="load" />
+    </node>
+
+</launch>
