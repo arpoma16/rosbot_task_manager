@@ -8,6 +8,8 @@ This project uses a  [Rosbot 2R](https://husarion.com/tutorials/howtostart/rosbo
 
 This project is based on [rosbot_patrol](https://github.com/adamkrawczyk/rosbot_patrol) ,[robot patrol simulation](https://github.com/adamkrawczyk/rosbot_patrol_simulation) that have this [tuturial in husarion web page](https://husarion.com/tutorials/ros-projects/security-guard-robot/)
 
+##En nuestro caso usaramos tf2  because the other project use tf and this is deprecate.
+
 
 other repositories that are important to check is:
 [Robot description ](https://github.com/husarion/rosbot_ros)
@@ -34,6 +36,11 @@ other repositories that are important to check is:
 ### run mission  recognizer 
 
 ### run task command
+
+### how test it
+for test you can use  a bash  for run the services 
+
+        rosservice call /service_name service-args
 
 ### Docker services for rosbot 2R
 Encender los servicios( esto se tiene que hacer usando vnc)

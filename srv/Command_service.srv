@@ -1,6 +1,5 @@
 #request constants
-int8 a #commando []
-int8 b #Estatus cliente
+String a #commando []
 ---
 int8 c 
 #Repuesta - [0:ocupado][1:Ejecuta comando]

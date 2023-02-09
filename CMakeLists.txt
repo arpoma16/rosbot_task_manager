@@ -171,7 +171,10 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
  catkin_install_python(PROGRAMS
-   scripts/ServiceCommands.py scripts/TaskManager.py scripts/VoiceCommand.py
+  scripts/detect_qr_command.py
+  scripts/detect_voice_command.py
+  scripts/run_command.py
+  scripts/command.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 
