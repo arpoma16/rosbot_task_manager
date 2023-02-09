@@ -6,7 +6,7 @@ from sensor_msgs.msg import BatteryState
 
 
 from rosbot_task_manager.srv import Command_service,Command_serviceResponse
-from run_command import dance,make_spin,move_to_goal
+from run_command import Command_move
 from get_yalm import get_command
 
 Status_robot = 0 #[0: libre], [1:ocupado]
@@ -14,7 +14,7 @@ Current_command = 0
 list_command = []
 Current_command_description=[]
 
-        
+runCommand = None
 
 def process_command(req):
     global Status_robot,Current_command,list_command,Current_command_description
@@ -47,7 +47,7 @@ def setStatusRobot(new_status):
     return Status_robot
 
 def ExecuteCommand():
-    global  Current_command_description
+    global  Current_command_description,runCommand
     print('Ejecutar comando')  
 
     while True :
@@ -56,11 +56,11 @@ def ExecuteCommand():
             print(Current_command_description['name'])
             if Current_command_description['name']=="bailar":
                 print("commando bailar")
-                dance()
+                runCommand.dance()
                 setStatusRobot(0)
             elif Current_command_description['name']=="vuelta":
                 print("vuelta")
-                make_spin()
+                #runCommand.make_spin()
                 setStatusRobot(0)
             else:
                 print("move to goal")
@@ -69,10 +69,11 @@ def ExecuteCommand():
                 print(Current_command_description['y'])
                 print(Current_command_description['angle'])
 
-                move_to_goal(float(Current_command_description['x']),float(Current_command_description['y']),float(Current_command_description['angle']))
-                make_spin(3.14,0.0)
-                make_spin(3.14,0.0)
-                move_to_goal(0.0,0.0,0.0)
+                runCommand.move_to_goal(float(Current_command_description['x']),float(Current_command_description['y']),float(Current_command_description['angle']))
+                runCommand.dance()
+                #runCommand.make_spin(3.14,0.0)
+                #runCommand.make_spin(3.14,0.0)
+                runCommand.move_to_goal(0.0,0.0,0.0)
                 setStatusRobot(0)
         rospy.sleep(0.5)
 
@@ -93,9 +94,6 @@ def cancel_command():
     rospy.loginfo("delete thread")
     rospy.loginfo("up thread again")
 
-    
-    
-
 def main():
     rospy.Service('Service_command', Command_service, process_command)
     rospy.Subscriber("battery",BatteryState, publish_status)
@@ -105,6 +103,7 @@ def main():
 
 
 if __name__ == '__main__':
+    runCommand = Command_move()
     rospy.init_node('Service_command_server')
     path_yalm = rospy.get_param('~yalm_path')
     list_command = get_command(path_yalm)
