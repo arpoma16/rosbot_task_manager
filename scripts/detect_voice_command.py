@@ -67,7 +67,7 @@ def Send_command(command_recognice):
 
 if __name__ == "__main__":
     rospy.init_node('Service_command_server')
-    path_yalm = rospy.get_param("yalm_path")
+    path_yalm = rospy.get_param('~yalm_path')
     list_command =  get_yalm.get_command(path_yalm)
 
     # create recognizer and mic instances
