@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="rosbot_task_manager" type="detect_voice_command.py" name="detect_voice_command" output="screen"/>
+</launch>
