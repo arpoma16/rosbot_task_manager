@@ -86,10 +86,11 @@ if __name__ == "__main__":
             rospy.INFO("comando reconocido: cancelar")
             Send_command("cancelar")
 
-        for commands in list_command["commmand"]:
-            if  commands["name"] in guess["transcription"].lower():
-                rospy.INFO("comando reconocido: " + commands["name"])
-                Send_command(commands["name"])
+        for c in range(0,list_command['command_num']) :
+            command = list_command['command']['command'+str(c)]
+            if  command["name"] in guess["transcription"].lower():
+                rospy.INFO("comando reconocido: " + command["name"])
+                Send_command(command["name"])
                 break
             
 
