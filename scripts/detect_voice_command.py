@@ -78,11 +78,13 @@ if __name__ == "__main__":
     while True:
 
         guess = recognize_speech_from_mic(recognizer, microphone)
-        rospy.INFO("voice command detected: " + guess["transcription"])
+        
 
         if guess["error"]:
             print("ERROR: {}".format(guess["error"]))
             break
+        print("voice command detected: " + guess["transcription"])
+        
         if "cancelar" in guess["transcription"].lower():
             rospy.INFO("comando reconocido: cancelar")
             Send_command("cancelar")
