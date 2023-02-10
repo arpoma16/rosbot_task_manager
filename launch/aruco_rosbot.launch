@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="rosbot_task_manager" type="detect_aruco_command.py" name="detect_aruco_command" output="screen">
+    <param name="yalm_path" type="string" value="$(find rosbot_task_manager)/params/command_params.yaml" />
+    </node>
+</launch>
