@@ -22,13 +22,13 @@ command:
 
   command3:
     name: "traer chocolate"
-    x:    0.874
-    y:    1.96
+    x:    -0.403
+    y:    1.410
     angle: 45.0
     
   command4:
     name: "llevar pintura"
-    x:    3.252
-    y:    0.039
+    x:    0.73
+    y:    1.11
     angle: 236.0
 

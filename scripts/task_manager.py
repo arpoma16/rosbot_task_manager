@@ -70,7 +70,9 @@ def ExecuteCommand():
                 print(Current_command_description['angle'])
 
                 runCommand.move_to_goal(float(Current_command_description['x']),float(Current_command_description['y']),float(Current_command_description['angle']))
+                rospy.sleep(0.5)
                 runCommand.dance()
+                rospy.sleep(0.5)
                 #runCommand.make_spin(3.14,0.0)
                 #runCommand.make_spin(3.14,0.0)
                 runCommand.move_to_goal(0.0,0.0,0.0)

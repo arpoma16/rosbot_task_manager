@@ -84,15 +84,15 @@ if __name__ == "__main__":
             print("ERROR: {}".format(guess["error"]))
             break
         print("voice command detected: " + guess["transcription"])
-        
+
         if "cancelar" in guess["transcription"].lower():
             rospy.INFO("comando reconocido: cancelar")
             Send_command("cancelar")
 
         for c in range(0,list_command['command_num']) :
             command = list_command['command']['command'+str(c)]
-            if  command["name"] in guess["transcription"].lower():
-                rospy.INFO("comando reconocido: " + command["name"])
+            if  command['name'] in guess["transcription"].lower():
+                print("comando reconocido: " + command['name'])
                 Send_command(command["name"])
                 break
             

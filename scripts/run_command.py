@@ -56,7 +56,7 @@ class Command_move():
         # Sends the goal to the action server.
         self.move_base.send_goal(goal)
         # Waits for the server to finish performing the action.
-        wait = self.move_base.wait_for_result(rospy.Duration(60))
+        wait = self.move_base.wait_for_result(rospy.Duration(200))
         # If the result doesn't arrive, assume the Server is not available
         if not wait:
             self.move_base.cancel_goal()
